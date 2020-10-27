@@ -12,6 +12,14 @@ function loadProducts() {
     });
 }
 
+let cartList=[
+]
+/* //Knappens EventListner
+addEventListener("click", function() {addToCart(i)}
+//Knappens funktion
+function addToCart(i) {
+    cartList.push(listOfProducts[i])
+} */
 
 function initSite() {
     loadProducts();
@@ -22,7 +30,39 @@ function initSite() {
 function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
+getProducts()
 
+   function getProducts() {
+       for (let i = 0; i < listOfProducts.length; i++) {
+           let product = listOfProducts[i];
+           document.getElementById("main").appendChild(createProductCard(i))
+       }
+    }
+   function createProductCard(i) {
+       let title = document.createElement("h3");
+       title.innerHTML += listOfProducts[i].title;
+       let description = document.createElement("p");
+       description.innerHTML += listOfProducts[i].description;
+       let image = document.createElement("img");
+       let imageURL = listOfProducts[i].image
+       image.src = ("/assets/" +imageURL);
+       let price = document.createElement("p");
+       price.innerHTML += listOfProducts[i].price
+       let button = document.createElement("button");
+       button.innerHTML = "Add to cart";
+       button.addEventListener("click", function() {addToCart(i)}); 
+       let div = document.createElement("div")
+       div.append(title, description, image, price, button);
+       
+       return div
+   }
+   
+   function addToCart(i) {
+    cartList.push(listOfProducts[i])
+    console.log(cartList)
+   }
+   console.log(cartList)
+   
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
     // an explainetory comment like the one for this function, see row 22.
