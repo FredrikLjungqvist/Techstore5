@@ -12,6 +12,14 @@ function loadProducts() {
     });
 }
 
+let cartList=[
+]
+//Knappens EventListner
+addEventListener("click", function() {addToCart(i)}
+//Knappens funktion
+function addToCart(i) {
+    cartList.push(listOfProducts[i])
+}
 
 function initSite() {
     loadProducts();
