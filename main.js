@@ -44,7 +44,8 @@ getProducts()
        let description = document.createElement("p");
        description.innerHTML += listOfProducts[i].description;
        let image = document.createElement("img");
-       image.innerHTML += listOfProducts[i].image;
+       let imageURL = listOfProducts[i].image
+       image.src = ("/assets/" +imageURL);
        let price = document.createElement("p");
        price.innerHTML += listOfProducts[i].price
        let button = document.createElement("button");
