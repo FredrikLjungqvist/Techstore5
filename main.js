@@ -39,20 +39,50 @@ getProducts()
        }
     }
    function createProductCard(i) {
+ 
+        let main = document.getElementById("main")
+
+        let cardContainer = document.createElement("div")
+        cardContainer.id="cardContainer"
+
+        let imgContainer = document.createElement("div")
+        imgContainer.id="imgContainer"
+
+        let infoContainer = document.createElement("div")
+        infoContainer.id= "infoContainer"
+
        let title = document.createElement("h3");
        title.innerHTML += listOfProducts[i].title;
+
        let description = document.createElement("p");
        description.innerHTML += listOfProducts[i].description;
+
        let image = document.createElement("img");
+       image.id="img"
+
        let imageURL = listOfProducts[i].image
        image.src = ("/assets/" +imageURL);
+
        let price = document.createElement("p");
        price.innerHTML += listOfProducts[i].price
+
        let button = document.createElement("button");
        button.innerHTML = "Add to cart";
        button.addEventListener("click", function() {addToCart(i)}); 
+
        let div = document.createElement("div")
        div.append(title, description, image, price, button);
+        
+
+       infoContainer.appendChild(title)
+       infoContainer.appendChild(description)
+       infoContainer.appendChild(price)
+       infoContainer.appendChild(button)
+
+       imgContainer.appendChild(image)
+       cardContainer.appendChild(imgContainer)
+       cardContainer.appendChild(infoContainer)
+       main.appendChild(cardContainer)
        
        return div
    }
