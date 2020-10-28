@@ -1,14 +1,37 @@
 *{
     box-sizing: border-box;
 }
+
 #main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.row{
+    display:flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+/** This gives the background and alignment of the cards on main**/
+#cardBackground{
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    background:linear-gradient(#FFFFFF,#F5F5F5);
+}
+#Cardrender{
+}
 #cardContainer{
     min-width:250px;
     max-width:400px;
+    margin:20px;
+    text-align: center;
 }
 
 #imgContainer{
@@ -16,8 +39,11 @@
     object-fit:cover;
 }
 
-#infoContainer{
-    text-align: center;
+#headInfoContainer{
+    padding:10px;
+    flex:2 0 0px;
+}
+#bottomInfoContainer{
     padding:10px;
     flex:2 0 0px;
 }
