@@ -39,7 +39,10 @@ getProducts()
     }
    function createProductCard(i) {
  
-        let main = document.getElementById("main")
+        let Cardrender = document.getElementById("Cardrender")
+
+        let cardBackground = document.createElement("div")
+        cardBackground.id="cardBackground"
 
         let cardContainer = document.createElement("div")
         cardContainer.id="cardContainer"
@@ -47,8 +50,11 @@ getProducts()
         let imgContainer = document.createElement("div")
         imgContainer.id="imgContainer"
 
-        let infoContainer = document.createElement("div")
-        infoContainer.id= "infoContainer"
+        let headInfoContainer = document.createElement("div")
+        headInfoContainer.id= "headinfoContainer"
+
+        let bottomInfoContainer = document.createElement("div")
+        bottomInfoContainer.id= "bottomInfoContainer"
 
        let title = document.createElement("h3");
        title.innerHTML += listOfProducts[i].title;
@@ -73,16 +79,17 @@ getProducts()
        div.append(title, description, image, price, button);
         
 
-       infoContainer.appendChild(title)
-       infoContainer.appendChild(description)
-       infoContainer.appendChild(price)
-       infoContainer.appendChild(button)
+       headInfoContainer.appendChild(title)
+       headInfoContainer.appendChild(description)
+       bottomInfoContainer.appendChild(price)
+       bottomInfoContainer.appendChild(button)
 
+       cardContainer.appendChild(headInfoContainer)
        imgContainer.appendChild(image)
        cardContainer.appendChild(imgContainer)
-       cardContainer.appendChild(infoContainer)
-       main.appendChild(cardContainer)
-       
+       cardContainer.appendChild(bottomInfoContainer)
+       cardBackground.appendChild(cardContainer)
+       Cardrender.appendChild(cardBackground)
        return div
    }
    // Check if Local storage has a list, and parse if true.
