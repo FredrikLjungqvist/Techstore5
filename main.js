@@ -12,8 +12,7 @@ function loadProducts() {
     });
 }
 
-let cartList=[
-]
+
 /* //Knappens EventListner
 addEventListener("click", function() {addToCart(i)}
 //Knappens funktion
@@ -86,12 +85,28 @@ getProducts()
        
        return div
    }
-   
-   function addToCart(i) {
-    cartList.push(listOfProducts[i])
-    console.log(cartList)
+   // Check if Local storage has a list, and parse if true.
+   function getCartList() {
+    let cartList = localStorage.getItem("cartList")
+    if (cartList) {
+        cartList = JSON.parse(cartList)
+    } else {
+        cartList = []
+    }
+    return cartList
+}
+
+
+    // Make variable from getCartList() to save new product in. Then save the variable to storage
+    function addToCart(i) {
+
+    let cartToSave = getCartList()
+    cartToSave.push(listOfProducts[i])
+    localStorage.setItem("cartList", JSON.stringify(cartToSave))
    }
-   console.log(cartList)
+   
+
+   
    
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
