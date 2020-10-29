@@ -57,9 +57,11 @@ getProducts()
         bottomInfoContainer.id= "bottomInfoContainer"
 
        let title = document.createElement("h3");
+       title.id="title"
        title.innerHTML += listOfProducts[i].title;
 
        let description = document.createElement("p");
+       description.id="flavorText"
        description.innerHTML += listOfProducts[i].description;
 
        let image = document.createElement("img");
@@ -69,15 +71,16 @@ getProducts()
        image.src = ("/assets/" +imageURL);
 
        let price = document.createElement("p");
+       price.id="pricetag"
        price.innerHTML += listOfProducts[i].price
 
        let button = document.createElement("button");
-       button.innerHTML = "Add to cart";
+       button.id="addButton"
+       button.innerHTML =  "Lägg till i kundvagnen";
        button.addEventListener("click", function() {addToCart(i)}); 
 
        let div = document.createElement("div")
        div.append(title, description, image, price, button);
-        
 
        headInfoContainer.appendChild(title)
        headInfoContainer.appendChild(description)
