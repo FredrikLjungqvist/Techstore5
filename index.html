@@ -11,14 +11,29 @@
         <!-- Link your stylesheet file/files, do NOT write styles in the html file! -->
         <link rel="stylesheet" href="/styles.css">
         <script defer src="./main.js"></script>
+        <script src="https://kit.fontawesome.com/2b61802b5a.js" crossorigin="anonymous"></script>
     </head>
     <body onload="initSite()">
         <header>
             <!-- Your header title and shopping cart button goes here  -->
+            <div class="nav">
+                <div class="brandname"><h3>TechStore</h3></div>
+                <div id="cartbutton">
+                    <!-- this is a exampel number, once implemented cartnumner cahnge to empety -->
+                    <div id="cartNumber"><h3>0</h3></div>
+                    <div class="cartIcon">
+                        <h3><i class="fas fa-shopping-cart"></i></h3>
+                    </div>
+                </div>
+            </div>
         </header>
         <main id="main">
+ #12make-cart.js
+            <a href="/cart.html">Go to cart</a> <!--tesatr-->
+
             <div id="Cardrender"> 
             </div>
+
             <!-- Add the content of your site here via javascript -->
         </main>
 
