@@ -26,38 +26,41 @@ function getCartList() {
 }
 
  function addInfoCard(i) {
-
+    let container = document.createElement("div")
+    container.classList.add("col", "mb-4")
+    
     let list = getCartList()
-   let div = document.createElement("div")
-   div.className = "card"
-   div.style.width = "18 rem"
-   div.id = "div"
-   
-   let image = document.createElement("img")
-   image.className = "card-img-top"
-   let imageUrl = list[i].image
-   image.src += ("/assets/" +imageUrl);
-   
-   let div2 = document.createElement("div")
-   div2.className = "card-body"
-   
-   let title = document.createElement("h5")
-   title.className = "card-title"
-   title.innerHTML += list[i].title
-   
-   let description = document.createElement("p")
-   description.className = "card-text"
-   description.innerHTML += list[i].description
+    let div = document.createElement("div")
+    div.className = "card"
+    
+    div.id = "div"
+    
+    let image = document.createElement("img")
+    image.className = "card-img-top"
+    let imageUrl = list[i].image
+    image.src += ("/assets/" +imageUrl);
+    
+    let div2 = document.createElement("div")
+    div2.className = "card-body"
+    
+    let title = document.createElement("h5")
+    title.className = "card-title"
+    title.innerHTML += list[i].title
+    
+    let description = document.createElement("p")
+    description.className = "card-text"
+    description.innerHTML += list[i].price + " " + "kr"
 
-   let button = document.createElement("button")
-   button.classList.add = ("btn", "btn-primary")
-   button.innerText = "ta bort"
-   
-   button.onclick = function(){
-    removeProduct(i)}
+    let button = document.createElement("button")
+    button.classList.add("btn", "btn-primary")
+    button.innerText = "ta bort"
+    
+    button.onclick = function(){
+        removeProduct(i)}
 
-   div.append(image, div2);
-   div2.append(title, description, button);
+    container.appendChild(div);
+    div.append(image, div2);
+    div2.append(title, description, button);
 return div
 }
 
