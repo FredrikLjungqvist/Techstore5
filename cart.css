@@ -1,6 +1,9 @@
-#div{
-    width: 300px;
+
+.card{
+    height: 400px;
 }
-main{
-    max-width: 500px;
+
+.card-img-top{
+    object-fit: contain;
+    height: 50%;
 }
