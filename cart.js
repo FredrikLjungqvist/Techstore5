@@ -11,19 +11,17 @@ function printCart() {
     for (let i = 0; i < list.length; i++) {
         let product = list[i];
         
-        document.getElementById("main").appendChild(addInfoCard(i))
+        document.getElementById("main").appendChild(addInfoCard(i));
    }
     
     
 }
 function getCartList() {
-    let cartList = localStorage.getItem("cartList")
+    const cartList = localStorage.getItem("cartList")
     if (cartList) {
-        cartList = JSON.parse(cartList)
-    } else {
-        cartList = []
+        return  JSON.parse(cartList)
     }
-    return cartList
+    return []
 }
 
  function addInfoCard(i) {
@@ -32,12 +30,12 @@ function getCartList() {
     
     let list = getCartList()
     let div = document.createElement("div")
-    div.className = "card"
+    div.classList.add("card", "mx-3", "my-3", "py-2")
     
     div.id = "div"
     
     let image = document.createElement("img")
-    image.className = "card-img-top"
+    image.classList.add("card-img-top", "img-fluid")
     let imageUrl = list[i].image
     image.src += ("/assets/" +imageUrl);
     
@@ -70,8 +68,7 @@ function removeProduct(i) {
     cart.splice(i,1)
     localStorage.setItem("cartList", JSON.stringify(cart))
     document.getElementById("main").innerHTML = ""
-    printCart()
-    totalPrice()
+    initSite()
 } 
 
 //Totalpris
@@ -81,8 +78,8 @@ document.getElementById("test").innerHTML = ""
 let list = getCartList()
 let initialValue = 0;
 
-let sum = list.reduce(function (total, currentValue) {
-    return total + currentValue.price;
+let sum = list.reduce(function (total, currentItem) {
+    return total + currentItem.price;
 }, initialValue);
 if (sum>0) {
     document.getElementById("test").innerHTML = "Totalt " + sum + " Kronor"
