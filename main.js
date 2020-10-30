@@ -115,7 +115,7 @@ getProducts()
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
    }
    
-
+   
    
    
     // Add your code here, remember to brake your code in to smaller function blocks

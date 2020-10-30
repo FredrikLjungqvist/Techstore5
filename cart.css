@@ -13,3 +13,18 @@
 .container{
     box-sizing: border-box;
 }
+#titleCart {
+    margin-top: 200px;
+    text-align: center;
+}
+.btn{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

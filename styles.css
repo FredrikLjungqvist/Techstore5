@@ -52,7 +52,7 @@ li.nav.left{
     justify-content: center;
 }
 
-.row{
+/* .row{
     display:flex;
     flex-direction: row;
 }
@@ -60,7 +60,7 @@ li.nav.left{
     display: flex;
     justify-content: center;
     flex-direction:column;
-}
+} */
 
 /** This gives the background and alignment of the cards on main**/
 #cardBackground{
