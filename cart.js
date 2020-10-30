@@ -13,9 +13,9 @@ function printCart() {
         
         document.getElementById("main").appendChild(addInfoCard(i))
    }
-    
-    
+     
 }
+
 function getCartList() {
     let cartList = localStorage.getItem("cartList")
     if (cartList) {

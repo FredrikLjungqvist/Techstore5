@@ -22,13 +22,31 @@ function addToCart(i) {
 
 function initSite() {
     loadProducts();
+
     // This would also be a good place to initialize other parts of the UI
 }
+
+
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
+
+    function counter(){
+        let cartCounter = localStorage.getItem("cartList")
+        for(let i=0;i < cartCounter.length; i++)
+            if(cartCounter){
+                cartCounter = JSON.parse(cartCounter)
+                console.log(cartCounter.length)
+                let addButton = document.getElementById("addButton");
+                cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
+        }
+        else{
+            cartCounter = []
+        }
+    }
+
 getProducts()
 
    function getProducts() {
@@ -36,9 +54,11 @@ getProducts()
            let product = listOfProducts[i];
            document.getElementById("main").appendChild(createProductCard(i))
        }
+
     }
    function createProductCard(i) {
- 
+    
+    counter()
         let Cardrender = document.getElementById("Cardrender")
 
         let cardBackground = document.createElement("div")
@@ -106,18 +126,15 @@ getProducts()
     return cartList
 }
 
-
     // Make variable from getCartList() to save new product in. Then save the variable to storage
     function addToCart(i) {
 
     let cartToSave = getCartList()
     cartToSave.push(listOfProducts[i])
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
+    counter()
    }
-   
 
-   
-   
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
     // an explainetory comment like the one for this function, see row 22.
