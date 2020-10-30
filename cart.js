@@ -2,15 +2,16 @@
 
 function initSite() {
     printCart()
-    
+    totalPrice()
+    makePayment()
 }
 
 function printCart() {
     let list = getCartList()
     for (let i = 0; i < list.length; i++) {
-       let product = list[i];
-      
-       document.getElementById("main").appendChild(addInfoCard(i))
+        let product = list[i];
+        
+        document.getElementById("main").appendChild(addInfoCard(i))
    }
     
     
@@ -70,4 +71,33 @@ function removeProduct(i) {
     localStorage.setItem("cartList", JSON.stringify(cart))
     document.getElementById("main").innerHTML = ""
     printCart()
+    totalPrice()
 } 
+
+//Totalpris
+ function totalPrice() {
+     
+document.getElementById("test").innerHTML = ""
+let list = getCartList()
+let initialValue = 0;
+
+let sum = list.reduce(function (total, currentValue) {
+    return total + currentValue.price;
+}, initialValue);
+if (sum>0) {
+    document.getElementById("test").innerHTML = "Totalt " + sum + " Kronor"
+ }else{
+     document.getElementById("test").innerHTML = ""
+ }
+}
+
+//Slutför köp
+function makePayment() {
+   let btn = document.getElementById("knapp")
+   btn.innerHTML = "Slutför Köp"
+   btn.addEventListener("click", betalt)
+       
+}
+function betalt() {
+    alert("Köpet genomfört")
+}
