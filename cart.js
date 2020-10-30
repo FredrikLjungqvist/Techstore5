@@ -1,7 +1,9 @@
 // JavaScript for cart
 
-function initSite() {
+function initCart() {
+    document.getElementById("main").innerText =""
     printCart()
+
     totalPrice()
     makePayment()
 }
