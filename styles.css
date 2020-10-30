@@ -7,64 +7,45 @@ body{
     margin:0;
 }
 
-.nav{
-    width:100vw;
-    position: fixed;
-    display:flex;
-    justify-content: space-between;
-    color:#FFFFFF;
-    background-color:#212121;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-.brandname{
-    height:100%;
-    width:20%;
-    font-size: 3em;
-    text-align:center;
-    color:#FFFFFF;
-    font-weight:bold;
-    font-family:Arial, Helvetica, sans-serif;
-}
 
-.brandname a{
-    color:#FFFFFF;
-    text-decoration: none;
-}
 h3{
-    margin:10px;
-    font-size: 1em;
+    padding:0;
+    margin:0;
 }
 
-#cartbutton{
-    width:110px;
-    height:100%;
-    margin-right:2%;
-    display: flex;
-    flex-direction: row;
+ul.nav{
+    width:100vw;
+    list-style-type:none; 
+    position: fixed;
+    margin:0;
+    padding:0;
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #212121;
+}
+
+li.nav{
+    width:20%;
+    float:right;
+    color:#FFFFFF;
+    text-align:center;
+    background-color:#212121;
+}
+
+li.nav a{
+    display:block;
+    padding:14px 16px;
     text-decoration: none;
     color:#FFFFFF;
 }
 
-#cartNumber{
-    width:30px;
-    font-size:35px;
-    padding-top: 10px;
-    height:20%;
+li.nav.left{
+    float:left;
+    margin:0;
+    padding:0;
+    text-align:left;
 }
-.cartIcon{
-    width:50%;
-    height:100%;
-    padding-top:12px;
-    font-size:2em;
-    text-align: center;
-    color:white;
-}
-.cartIcon a{
-    text-decoration: none;
-    display:block;
-    color:white;
-}
+
 #main{
     display: flex;
     flex-wrap: wrap;
@@ -95,7 +76,7 @@ h3{
     /* min-width:150px;
     max-width:300px; */
     width:280px;
-    margin-top:80px;
+    margin-top:85px;
     margin-bottom: 80px;
     display:flex;
     justify-content: center;
@@ -163,4 +144,33 @@ h3{
     padding:10px;
     content:'\f218';
     font-family: FontAwesome;
+}
+
+
+#loginbox{
+    width:150px;
+    height:30px;
+    padding:5px;
+    text-align:center;
+    color:white;
+    background-color:red;
+}/*test om det fngerar med en login knapp*/
+
+@media screen and (max-width: 420px){
+    ul.nav{
+        width:100vw;
+        font-size: 30px;
+    }
+    li.nav{
+        width:100vw;
+        float:none;
+    }
+    li.nav a{
+        padding:5px;
+        text-align: center;
+    }
+    #cardContainer{
+        margin-top:130px;
+        margin-bottom:30px;
+    }
 }
