@@ -1,9 +1,15 @@
 
 .card{
     height: 400px;
+    background-color: #F5F5F5;
+    border-color: #5596F5;
 }
 
 .card-img-top{
+    height: 60%;
     object-fit: contain;
-    height: 50%;
+    
+}
+.container{
+    box-sizing: border-box;
 }
