@@ -1,41 +1,32 @@
 // JavaScript for cart
 
 function initCart() {
-    document.getElementById("main").innerHTML = ""
-    printTitle()
-    initCard()
-    printCart()
-    initCounterButton()
-    
-
-    totalPrice()
-    /* makePayment() */
+    document.getElementById("main").innerHTML = "";
+    printTitle();
+    initCard();
+    printCart();
+    initCounterButton();
+    totalPrice();
 }
 
 function printCart() {
-    let list = getCartList()
+    let list = getCartList();
     for (let i = 0; i < list.length; i++) {
         let product = list[i];
-        
-
-
         document.getElementById("printCart").appendChild(addInfoCard(i));
-
-   }
+    }
      
 }
 
 function getCartList() {
-    const cartList = localStorage.getItem("cartList")
+    const cartList = localStorage.getItem("cartList");
     if (cartList) {
-        return  JSON.parse(cartList)
+        return  JSON.parse(cartList);
     }
     return []
 }
 
  function addInfoCard(i) {
-    
- 
     
     let container = document.createElement("div")
     container.classList.add("col", "mb-4")
@@ -86,7 +77,7 @@ function removeProduct(i) {
 
     document.getElementById("printCart").innerHTML = ""
     printCart()
-    counter()
+    counterTotal()
     displayBuyButton()
 
 } 
@@ -120,7 +111,7 @@ let sum = list.reduce(function (total, currentItem) {
 function betalt() {
     alert("Köpet genomfört")
 
-}
+
 
     localStorage.clear();
     initCart()
@@ -166,8 +157,8 @@ function initCounterButton() {
     
     document.getElementById("cart").appendChild(counterDiv)
     counterDiv.appendChild(price)
-    price.innerText = counter()
-    counter()
+    price.innerText = counterTotal()
+    counterTotal()
 
     let buttonDiv = document.createElement("div");
     buttonDiv.id = "buttonDiv"
@@ -186,11 +177,11 @@ function initCounterButton() {
         noItem()
     } */
 }
-function counter() {
+function counterTotal() {
     let list = getCartList()
     document.getElementById("price").innerText = ""
     if (list.length>0) {
-        document.getElementById("price").innerText = "Totalt pris: " + totalPrice(); + " kr"
+        document.getElementById("price").innerText = "Totalt pris: " + totalPrice() + " kr";
         
     } 
     
