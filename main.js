@@ -97,13 +97,11 @@ getProducts()
    }
    // Check if Local storage has a list, and parse if true.
    function getCartList() {
-    let cartList = localStorage.getItem("cartList")
+    const cartList = localStorage.getItem("cartList")
     if (cartList) {
-        cartList = JSON.parse(cartList)
-    } else {
-        cartList = []
+        return  JSON.parse(cartList)
     }
-    return cartList
+    return []
 }
 
 
@@ -115,7 +113,7 @@ getProducts()
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
    }
    
-
+   
    
    
     // Add your code here, remember to brake your code in to smaller function blocks
