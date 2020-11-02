@@ -13,12 +13,16 @@ h3{
     margin:0;
 }
 
+
 h4{
     padding-top:10px;
     margin:0px;
 }
 
-ul.nav{
+
+
+ul.navi{
+    
     width:100vw;
     list-style-type:none; 
     position: fixed;
@@ -27,9 +31,10 @@ ul.nav{
     font-size: 40px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #212121;
+    z-index: 10;
 }
 
-li.nav{
+li.navi{
     width:20%;
     float:right;
     color:#FFFFFF;
@@ -37,19 +42,23 @@ li.nav{
     background-color:#212121;
 }
 
-li.nav a{
+li.navi a{
     display:block;
     padding:14px 16px;
     text-decoration: none;
     color:#FFFFFF;
+    
 }
+
 
 li.nav.row{
     display:flex;
     flex-direction: row;
 }
 
-li.nav.left{
+
+li.navi.left{
+
     float:left;
     margin:0;
     padding:0;
@@ -62,7 +71,7 @@ li.nav.left{
     justify-content: center;
 }
 
-.row{
+/* .row{
     display:flex;
     flex-direction: row;
 }
@@ -70,7 +79,7 @@ li.nav.left{
     display: flex;
     justify-content: center;
     flex-direction:column;
-}
+} */
 
 /** This gives the background and alignment of the cards on main**/
 #cardBackground{
@@ -166,16 +175,18 @@ li.nav.left{
     background-color:red;
 }/*test om det fngerar med en login knapp*/
 
-@media screen and (max-width: 450px){
-    ul.nav{
+
+ @media screen and (max-width: 420px){
+    ul.navi{
+
         width:100vw;
         font-size: 30px;
     }
-    li.nav{
+    li.navi{
         width:100vw;
         float:none;
     }
-    li.nav a{
+    li.navi a{
         padding:5px;
         text-align: center;
     }
@@ -187,4 +198,4 @@ li.nav.left{
         margin-top:130px;
         margin-bottom:30px;
     }
-}
+} 
