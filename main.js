@@ -22,7 +22,8 @@ function addToCart(i) {
 
 function initSite() {
     loadProducts();
-
+    
+    
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -33,7 +34,7 @@ function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
 
-    function counter(){
+    /* function counter(){
         let cartCounter = localStorage.getItem("cartList")
         for(let i=0;i < cartCounter.length; i++)
             if(cartCounter){
@@ -45,9 +46,10 @@ function addProductsToWebpage() {
         else{
             cartCounter = []
         }
-    }
+    } */
 
-getProducts()
+ getProducts()
+ counter() 
 
    function getProducts() {
        for (let i = 0; i < listOfProducts.length; i++) {
@@ -58,7 +60,7 @@ getProducts()
     }
    function createProductCard(i) {
     
-    counter()
+    /* counter() */
         let Cardrender = document.getElementById("Cardrender")
 
         let cardBackground = document.createElement("div")
@@ -123,6 +125,13 @@ getProducts()
     }
     return []
 }
+function counter() {
+    let list = getCartList()
+    if (list.length>0) {
+        document.getElementById("count").innerHTML = list.length
+    console.log(list.length)
+    }
+}
 
     // Make variable from getCartList() to save new product in. Then save the variable to storage
     function addToCart(i) {
@@ -130,7 +139,7 @@ getProducts()
     let cartToSave = getCartList()
     cartToSave.push(listOfProducts[i])
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
-    counter()
+     counter() 
    }
 
     // Add your code here, remember to brake your code in to smaller function blocks
