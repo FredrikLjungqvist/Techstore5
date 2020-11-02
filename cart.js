@@ -17,7 +17,10 @@ function printCart() {
     for (let i = 0; i < list.length; i++) {
         let product = list[i];
         
+
+
         document.getElementById("printCart").appendChild(addInfoCard(i));
+
    }
     
     
@@ -38,6 +41,10 @@ function getCartList() {
     container.classList.add("col", "mb-4")
     
     let list = getCartList()
+
+    let div = document.createElement("div")
+    div.classList.add("card", "mx-3", "my-3", "py-2")
+
     
     let div = document.createElement("div")
     div.classList.add("card", "mx-3", "my-3", "py-2", "justify-content-center")
@@ -80,10 +87,12 @@ function removeProduct(i) {
     let cart = getCartList()
     cart.splice(i,1)
     localStorage.setItem("cartList", JSON.stringify(cart))
+
     document.getElementById("printCart").innerHTML = ""
     printCart()
     counter()
     displayBuyButton()
+
 } 
 
 //Totalpris

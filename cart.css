@@ -8,6 +8,7 @@
 .card-img-top{
     height: 60%;
     object-fit: contain;
+
 }
 .card-title{
     font-weight: bold;
@@ -72,4 +73,5 @@
     padding-right: 10px;
     content: "\f00c";
     font-family: FontAwesome;
+
 }
