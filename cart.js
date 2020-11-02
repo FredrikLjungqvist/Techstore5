@@ -22,9 +22,9 @@ function printCart() {
         document.getElementById("printCart").appendChild(addInfoCard(i));
 
    }
-    
-    
+     
 }
+
 function getCartList() {
     const cartList = localStorage.getItem("cartList")
     if (cartList) {
@@ -119,6 +119,9 @@ let sum = list.reduce(function (total, currentItem) {
 } */
 function betalt() {
     alert("Köpet genomfört")
+
+}
+
     localStorage.clear();
     initCart()
 }
@@ -215,3 +218,4 @@ function setTextById(htmlId, text) {
         element.innerText=text
     }
 }
+

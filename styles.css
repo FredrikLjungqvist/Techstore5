@@ -13,7 +13,16 @@ h3{
     margin:0;
 }
 
+
+h4{
+    padding-top:10px;
+    margin:0px;
+}
+
+
+
 ul.navi{
+    
     width:100vw;
     list-style-type:none; 
     position: fixed;
@@ -41,7 +50,15 @@ li.navi a{
     
 }
 
+
+li.nav.row{
+    display:flex;
+    flex-direction: row;
+}
+
+
 li.navi.left{
+
     float:left;
     margin:0;
     padding:0;
@@ -158,8 +175,10 @@ li.navi.left{
     background-color:red;
 }/*test om det fngerar med en login knapp*/
 
+
  @media screen and (max-width: 420px){
     ul.navi{
+
         width:100vw;
         font-size: 30px;
     }
@@ -170,6 +189,10 @@ li.navi.left{
     li.navi a{
         padding:5px;
         text-align: center;
+    }
+    h4{
+        padding-top:2px;
+        margin-left:40%;
     }
     #cardContainer{
         margin-top:130px;
