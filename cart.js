@@ -43,10 +43,6 @@ function getCartList() {
     let list = getCartList()
 
     let div = document.createElement("div")
-    div.classList.add("card", "mx-3", "my-3", "py-2")
-
-    
-    let div = document.createElement("div")
     div.classList.add("card", "mx-3", "my-3", "py-2", "justify-content-center")
     div.id = "div"
     
