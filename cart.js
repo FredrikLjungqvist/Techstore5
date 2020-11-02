@@ -6,6 +6,7 @@ function initCart() {
     initCard()
     printCart()
     initCounterButton()
+    
 
     totalPrice()
     /* makePayment() */
@@ -59,8 +60,9 @@ function getCartList() {
     description.innerHTML += list[i].price + " " + "kr"
 
     let button = document.createElement("button")
-    button.classList.add("btn", "btn-primary")
-    button.innerText = "ta bort"
+    button.classList.add("btn")
+    button.innerText = "Ta bort"
+    button.id = "removeBtn"
     
     button.onclick = function(){
         removeProduct(i)}
@@ -72,13 +74,16 @@ function getCartList() {
 return div
 }
 
+
+
 function removeProduct(i) {
     let cart = getCartList()
     cart.splice(i,1)
     localStorage.setItem("cartList", JSON.stringify(cart))
     document.getElementById("printCart").innerHTML = ""
     printCart()
-    initCounterButton()
+    counter()
+    displayBuyButton()
 } 
 
 //Totalpris
@@ -109,9 +114,12 @@ let sum = list.reduce(function (total, currentItem) {
 } */
 function betalt() {
     alert("Köpet genomfört")
+    localStorage.clear();
+    initCart()
 }
 function noItem() {
     let text = document.createElement("h1")
+    text.id = "tom"
     text.innerText = "Din kundvagn är tom"
     document.getElementById("cart").appendChild(text)
 }
@@ -140,10 +148,24 @@ function initCard() {
 function initCounterButton() {
     let list = getCartList()
     
-    setTextById("counter","")
-    setTextById("buy", "")
+    setTextById("price", "")
+    setTextById("buy", "") 
     
-    if (list.length>0) {
+    let counterDiv = document.createElement("div")
+    counterDiv.id = "counterDiv"
+    let price = document.createElement("p")
+    price.id = "price"
+    
+    document.getElementById("cart").appendChild(counterDiv)
+    counterDiv.appendChild(price)
+    price.innerText = counter()
+    counter()
+
+    let buttonDiv = document.createElement("div");
+    buttonDiv.id = "buttonDiv"
+    document.getElementById("cart").appendChild(buttonDiv)
+    displayBuyButton()
+    /* if (list.length>0) {
        let counter = document.createElement("p")
        counter.innerText = "Totalt pris " + totalPrice()
        counter.id = "counter"
@@ -152,6 +174,31 @@ function initCounterButton() {
        button.addEventListener("click", betalt)
        button.id = "buy"
        document.getElementById("cart").append(counter, button);
+    }else{
+        noItem()
+    } */
+}
+function counter() {
+    let list = getCartList()
+    document.getElementById("price").innerText = ""
+    if (list.length>0) {
+        document.getElementById("price").innerText = "Totalt pris: " + totalPrice(); + " kr"
+        
+    } 
+    
+}
+
+
+function displayBuyButton() {
+    let list = getCartList()
+    document.getElementById("buttonDiv").innerHTML = ""
+    if (list.length>0){
+    let button = document.createElement("button")
+       button.innerHTML = "Slutför Köp"
+       button.addEventListener("click", betalt)
+       button.id = "buyBtn"
+       button.classList.add("btn", "btn-primary")
+       document.getElementById("buttonDiv").appendChild(button)
     }else{
         noItem()
     }

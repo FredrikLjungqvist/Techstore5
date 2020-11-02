@@ -8,7 +8,13 @@
 .card-img-top{
     height: 60%;
     object-fit: contain;
-    
+}
+.card-title{
+    font-weight: bold;
+    font-size: 2.1rem;
+}
+.card-text{
+    font-weight: bold;
 }
 .container{
     box-sizing: border-box;
@@ -16,15 +22,54 @@
 #titleCart {
     margin-top: 200px;
     text-align: center;
+    font-weight: bold;
+    font-size: 5rem;
 }
-.btn{
-    align-items: center;
+#titleCart:before {
+    padding-right: 10px;
+    content:'\f07a';
+    font-family: FontAwesome;
+}
+ .btn{
+    /* align-items: center;
     align-content: center;
-    text-align: center;
+    text-align: center; */
     margin: auto;
-}
+} 
 .card-body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+#price{
+    text-align: center;
+    font-weight: bold;
+}
+#buttonDiv {
+    text-align: center;
+}
+#tom {
+    text-align: center;
+}
+#div{
+
+}
+#removeBtn:before{
+    padding-right: 10px;
+    content:'\f2ed';
+    font-family: FontAwesome;
+}
+#removeBtn {
+    background-color: #E64E4E;
+    color: white;
+    font-weight: bold;
+}
+#buyBtn {
+    font-weight: bold;
+    font-size: x-large;
+}
+#buyBtn:before{
+    padding-right: 10px;
+    content: "\f00c";
+    font-family: FontAwesome;
 }
