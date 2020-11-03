@@ -111,8 +111,6 @@ let sum = list.reduce(function (total, currentItem) {
 function betalt() {
     alert("Köpet genomfört")
 
-
-
     localStorage.clear();
     initCart()
 }

@@ -34,7 +34,7 @@ function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
 
-    /* function counter(){
+   /*  function counter(){
         let cartCounter = localStorage.getItem("cartList")
         for(let i=0;i < cartCounter.length; i++)
             if(cartCounter){
@@ -48,9 +48,8 @@ function addProductsToWebpage() {
         }
     } */
 
- getProducts()
- counter() 
 
+getProducts()
    function getProducts() {
        for (let i = 0; i < listOfProducts.length; i++) {
            let product = listOfProducts[i];
@@ -59,8 +58,8 @@ function addProductsToWebpage() {
 
     }
    function createProductCard(i) {
-    
-    /* counter() */
+
+    CartCounter()
         let Cardrender = document.getElementById("Cardrender")
 
         let cardBackground = document.createElement("div")
@@ -135,13 +134,19 @@ function counter() {
 
     // Make variable from getCartList() to save new product in. Then save the variable to storage
     function addToCart(i) {
-
     let cartToSave = getCartList()
     cartToSave.push(listOfProducts[i])
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
-     counter() 
-   }
 
+    CartCounter()
+   }
+   function CartCounter(){
+       document.getElementById("count").innerHTML = ""
+       let cartCounter = getCartList()
+       cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
+                console.log(cartCounter.length)
+   }
+   CartCounter()
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
     // an explainetory comment like the one for this function, see row 22.
