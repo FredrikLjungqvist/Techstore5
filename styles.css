@@ -14,6 +14,7 @@ h3{
 }
 
 
+
 #count{
     padding:5px;
     margin:0px;
@@ -45,7 +46,7 @@ ul.navi{
 }
 
 li.navi{
-    width:12%;
+    width:10%;
     float:right;
     color:#FFFFFF;
     text-align:center;
