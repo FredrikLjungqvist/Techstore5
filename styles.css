@@ -46,7 +46,9 @@ ul.navi{
 }
 
 li.navi{
-    width:10%;
+    width:20%;
+    margin-left:1px;
+    margin-right:1px;
     float:right;
     color:#FFFFFF;
     text-align:center;
@@ -84,16 +86,6 @@ li.navi.left{
     justify-content: center;
 }
 
-/* .row{
-    display:flex;
-    flex-direction: row;
-}
-.column{
-    display: flex;
-    justify-content: center;
-    flex-direction:column;
-} */
-
 /** This gives the background and alignment of the cards on main**/
 #cardBackground{
     width:100vw;
@@ -102,6 +94,7 @@ li.navi.left{
     background:linear-gradient(#FFFFFF,#F5F5F5);
 }
 #Cardrender{
+    margin-top:20px;
 }
 
 #cardContainer{
@@ -135,6 +128,7 @@ li.navi.left{
 }
 #title{
     font-size:50px;
+    font-weight: bold;
 }
 #flavorText{
     font-size:0.7em;
@@ -210,6 +204,9 @@ li.navi.left{
         margin-right:10px;
         font-size:38px;
         width:10%;
+    }
+    #Cardrender{
+        margin-top:60px;
     }
     #cardContainer{
         margin-top:130px;
