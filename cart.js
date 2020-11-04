@@ -79,6 +79,7 @@ function removeProduct(i) {
     printCart()
     counterTotal()
     displayBuyButton()
+    CartCounter()
 
 } 
 
@@ -97,17 +98,7 @@ let sum = list.reduce(function (total, currentItem) {
  
 }
 
-//Slutför köp
-/* function makePayment() {
-    let list = getCartList()
-    if (list.length>1) {
-    let btn = document.getElementById("knapp")
-    btn.innerHTML = "Slutför Köp"
-    btn.addEventListener("click", betalt)
-    }else{
-        noItem()
-    }
-} */
+
 function betalt() {
     alert("Köpet genomfört")
 
@@ -125,9 +116,18 @@ function printTitle() {
     let title = document.createElement("h2")
     title.innerText = "Kundvagn"
     title.id = "titleCart"
+    title.classList.add("page-header")
     document.getElementById("cart").innerText = ""
     document.getElementById("cart").appendChild(title)
 }
+
+   
+function CartCounter(){
+    document.getElementById("count").innerHTML = ""
+    let cartCounter = getCartList()
+    cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
+                
+   }
 
 function initCard() {
     let bigCont = document.createElement("div")
@@ -162,36 +162,22 @@ function initCounterButton() {
     buttonDiv.id = "buttonDiv"
     document.getElementById("cart").appendChild(buttonDiv)
     displayBuyButton()
-    /* if (list.length>0) {
-       let counter = document.createElement("p")
-       counter.innerText = "Totalt pris " + totalPrice()
-       counter.id = "counter"
-       let button = document.createElement("button")
-       button.innerHTML = "Slutför Köp"
-       button.addEventListener("click", betalt)
-       button.id = "buy"
-       document.getElementById("cart").append(counter, button);
-    }else{
-        noItem()
-    } */
+    
 }
 function counterTotal() {
     let list = getCartList()
     document.getElementById("price").innerText = ""
     if (list.length>0) {
         document.getElementById("price").innerText = "Totalt pris: " + totalPrice() + " kr";
-        
-    } 
-    
+        } 
 }
-
 
 function displayBuyButton() {
     let list = getCartList()
     document.getElementById("buttonDiv").innerHTML = ""
     if (list.length>0){
     let button = document.createElement("button")
-       button.innerHTML = "Slutför Köp"
+       button.innerHTML = "Slutför ditt köp"
        button.addEventListener("click", betalt)
        button.id = "buyBtn"
        button.classList.add("btn", "btn-primary")
