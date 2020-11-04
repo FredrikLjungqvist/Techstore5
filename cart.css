@@ -3,6 +3,11 @@
     height: 400px;
     background-color: #F5F5F5;
     border-color: #5596F5;
+    border-radius: 15px;
+    border-width: 2px;
+    width: 100%;
+    min-width: 212px;
+    max-width: 250px;
 }
 
 .card-img-top{
@@ -21,10 +26,12 @@
     box-sizing: border-box;
 }
 #titleCart {
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-bottom: 50px;
     text-align: center;
     font-weight: bold;
-    font-size: 5rem;
+    font-size: 400%;
+    
 }
 #titleCart:before {
     padding-right: 10px;
@@ -68,6 +75,8 @@
 #buyBtn {
     font-weight: bold;
     font-size: x-large;
+    background-color: #5596F5;
+    border-radius: 15px;
 }
 #buyBtn:before{
     padding-right: 10px;
