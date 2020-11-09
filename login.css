@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+button{
+  cursor: pointer;
+}
+body{
+  margin:0;
+  padding:0;
+  display:flex;
+  justify-content: center;
+}
+.SignIn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color:#21212180 ;
+  }
+
+  /* Modal Content */
+.SignIn-content {
+   max-width:250px;
+    text-align:center;
+    background-color:#F5F5F5;
+    margin: auto;
+    padding: 20px;
+    border-radius: 25px;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    cursor: pointer;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+ .margin{
+   margin:5px;
+ }
+
+ #loginInput {
+  cursor: pointer;
+  display:block;
+  font-size:20px;
+  padding:10px;
+  margin:15px;
+  color:white;
+  border:none;
+  background-color: coral;
+}
+
+ #loginInput button {
+   display:block;
+   font-size:20px;
+   padding:10px;
+   margin:15px;
+   color:white;
+   border:none;
+   background-color: coral;
+ }
+
+ #loginInput button:hover {
+   display:block;
+  color:black;
+  background-color: cyan;
+}
