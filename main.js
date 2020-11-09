@@ -48,7 +48,6 @@ function addProductsToWebpage() {
         }
     } */
 
-
 getProducts()
    function getProducts() {
        for (let i = 0; i < listOfProducts.length; i++) {
@@ -147,6 +146,24 @@ function counter() {
                 console.log(cartCounter.length)
    }
    CartCounter()
+   
+   let modalcontainer  = document.getElementById("theModal");
+
+   let modalButton = document.getElementById("modalbutton");
+
+   let span = document.getElementsByClassName("closemodal")[0];
+
+   modalButton.onclick = function(){
+    modalcontainer.style.display ="block";
+   }
+   span.onclick =function(){
+       modalcontainer.style.display = "none"
+   }
+   window.onclick = function(event) {
+       if (event.target == modalcontainer){
+        modalcontainer.style.display = "none"
+       }
+   }
     // Add your code here, remember to brake your code in to smaller function blocks
     // to reduce complexity and increase readability. Each function should have
     // an explainetory comment like the one for this function, see row 22.

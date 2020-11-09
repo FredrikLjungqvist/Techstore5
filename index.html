@@ -29,10 +29,19 @@
                             <li><a href="#" onclick="initCart()"><i class="fas fa-shopping-cart"></i></a></li>
                         </ul>
                     </li>
-                    <li class="navi"> <a href="http://">login</a></li>
+                    <li class="navi"> <button id="modalbutton" class="loginmodal">Login</button></li>
                 </ul> 
         </header>
         <main>
+            <div id="theModal" class="modalcontainer">
+                <div class="modalContent">
+                    <span class="closemodal">&times;</span>
+                    <h4>Please sign in</h4>
+                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Password">
+                    <input type="Submit">
+                </div>
+            </div>
             <div id="main">
                 <div id="Cardrender"> </div>
             </div>
