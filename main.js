@@ -32,7 +32,7 @@ function initSite() {
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
-    console.log(listOfProducts);
+
 
    /*  function counter(){
         let cartCounter = localStorage.getItem("cartList")
@@ -143,7 +143,6 @@ function counter() {
        document.getElementById("count").innerHTML = ""
        let cartCounter = getCartList()
        cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
-                console.log(cartCounter.length)
    }
    CartCounter()
    
