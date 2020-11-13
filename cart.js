@@ -104,6 +104,7 @@ function betalt() {
 
     localStorage.clear();
     initCart()
+    CartCounter()
 }
 function noItem() {
     let text = document.createElement("h1")
