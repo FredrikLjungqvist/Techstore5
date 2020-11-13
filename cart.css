@@ -6,9 +6,9 @@
     border-radius: 15px;
     border-width: 2px;
     width: 100%;
-    min-width: 212px;
-    max-width: 250px;
-    flex-wrap: nowrap;
+    min-width: 215px;
+    max-width: 225px;
+    
 }
 
 .card-img-top{
@@ -19,11 +19,11 @@
 .card-title{
     font-weight: bold;
     font-size: 2.1rem;
-    flex-wrap: nowrap;
+    
 }
 .card-text{
     font-weight: bold;
-    flex-wrap: nowrap;
+    
 }
 .container{
     box-sizing: border-box;
@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: nowrap;
+    
 }
 #price{
     text-align: center;
