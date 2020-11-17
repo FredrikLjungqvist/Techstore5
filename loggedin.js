@@ -43,7 +43,7 @@ function getOrders() {
         date.classList.add("date")
         date.id = "dateId"
         date.innerHTML = order.date + " Totalpris " + totalPrice()
-        console.log(productCont)
+        
         document.getElementById("test").appendChild(date)
         console.log(order.date)
         order.products.forEach((product) => {
