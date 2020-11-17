@@ -236,6 +236,9 @@ li.navi.left{
     background-color:red;
 }/*test om det fngerar med en login knapp*/
 
+.hide{
+    display:none;
+}
 
  @media screen and (max-width: 420px){
     ul.navi{

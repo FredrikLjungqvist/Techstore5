@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="cart.css">
         <script defer src="./main.js"></script>
         <script defer src="cart.js"></script>
+        <script defer src="userlogic.js"></script>
         <script src="https://kit.fontawesome.com/2b61802b5a.js" crossorigin="anonymous"></script>
     </head>
     <body onload="initSite()">
@@ -30,6 +31,7 @@
                         </ul>
                     </li>
                     <li class="navi"> <button id="modalbutton" class="loginmodal">Login</button></li>
+                    <li class="navi"><button id="logoutbtn" class="loginmodal hide">Logout</button></li>
                 </ul> 
         </header>
         <main>
@@ -37,9 +39,9 @@
                 <div class="modalContent">
                     <span class="closemodal">&times;</span>
                     <h4>Please sign in</h4>
-                    <input type="text" placeholder="Username">
-                    <input type="text" placeholder="Password">
-                    <input type="Submit">
+                    <input id="userInput" type="text" placeholder="Username">
+                    <input id="passInput" type="text" placeholder="Password">
+                    <button id="loginbtn">Login</button>
                 </div>
             </div>
             <div id="main">
