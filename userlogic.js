@@ -21,7 +21,7 @@ function fetchLoggedInUser(){
 }
 
 function fetchUser(){
-    let Userlist = localStorage.getItem("Userlist")
+    let Userlist = localStorage.getItem("userList")
 
     if(!Userlist){
         return[]
@@ -51,6 +51,7 @@ function loginUser(){
         if (Username == userlist.username && Password == userlist.password){
             closeModal()
             hidelogin()
+            initLoggedIn()
             foundUser = userlist
             
         }else{

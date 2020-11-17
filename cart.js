@@ -102,9 +102,48 @@ let sum = list.reduce(function (total, currentItem) {
 function betalt() {
     alert("Köpet genomfört")
 
-    localStorage.clear();
-    initCart()
-    CartCounter()
+    saveOrder()
+    localStorage.removeItem("cartList");
+    initCart();
+    CartCounter();
+}
+function saveOrder() {
+    let getOrder = getCartList()
+    let orderObject = {
+        date: new Date().toDateString(),
+        products: getOrder
+    }
+    
+    
+
+let loggedInUser = getLoggedInUser()
+loggedInUser.orders.push(orderObject)
+syncUsers(loggedInUser)
+}
+function getLoggedInUser() {
+    const loggedInUser =  localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+        
+        return  JSON.parse(loggedInUser);
+    }
+    return []
+}
+function getUsers() {
+    const users = localStorage.getItem("userList");
+    if(users){
+        return JSON.parse(users)
+        console.log(users)
+    }
+}
+
+function syncUsers(loggedInUser) {
+    let userList= getUsers()
+    let userIndex = userList.findIndex((user)=>{
+        return loggedInUser.username == user.username 
+    })
+    userList[userIndex] = loggedInUser
+    localStorage.setItem("userList", JSON.stringify(userList))
+    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
 }
 function noItem() {
     let text = document.createElement("h1")
@@ -117,7 +156,7 @@ function printTitle() {
     let title = document.createElement("h2")
     title.innerText = "Kundvagn"
     title.id = "titleCart"
-    title.classList.add("page-header")
+    title.classList.add( "page-header", "h2")
     document.getElementById("cart").innerText = ""
     document.getElementById("cart").appendChild(title)
 }

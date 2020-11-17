@@ -1,7 +1,7 @@
-window.addEventListener("load", initSite)
-
-function initSite() {
-   /* let log = {
+function initLoggedIn() {
+   document.getElementById("main").innerHTML=""
+   document.getElementById("cart").innerHTML=""
+    /* let log = {
     username: "Fredrik",
     password: "123",
     orders: []
@@ -43,15 +43,15 @@ function getOrders() {
         date.classList.add("date")
         date.id = "dateId"
         date.innerHTML = order.date + " Totalpris " + totalPrice()
-        console.log(productCont)
-        document.getElementById("test").appendChild(date)
+        
+        document.getElementById("loggedIn").appendChild(date)
         console.log(order.date)
         order.products.forEach((product) => {
             
             let productName = document.createElement("h3")
             productName.innerHTML =  product.title
             productName.id = "productName"
-            document.getElementById("test").appendChild(productName)
+            document.getElementById("loggedIn").appendChild(productName)
             console.log(productName)
             
 
