@@ -49,19 +49,15 @@ function loginUser(){
     for (let i = 0; i < Userlist.length; i++) {
         const userlist = Userlist[i];
         if (Username == userlist.username && Password == userlist.password){
-            document.getElementById("loginbtn").addEventListener("click", closeModal)
-            
-            console.log("hewwo")
+            closeModal()
             hidelogin()
             foundUser = userlist
-            console.log(userlist)
             
         }else{
         }   
     }
 
     if(foundUser){
-        console.log("hiya")
         localStorage.setItem("loggedInUser", JSON.stringify(foundUser))
         hidelogin()
         document.getElementById("userInput").value =""
