@@ -237,6 +237,21 @@ li.navi.left{
     background-color:red;
 }/*test om det fngerar med en login knapp*/
 
+#preOrdersBtn{
+    justify-content: center;
+    font-size:35px;
+    margin-top:8px;
+    padding:10px;
+    border-style: none;
+    outline:none;
+    color:#FFFFFF;
+    background-color: #212121;
+}
+#preOrdersBtn:hover{
+    color:#5596F5;
+    outline:none;
+}
+
 .hide{
     display:none;
 }
@@ -265,13 +280,14 @@ li.navi.left{
     margin-bottom: 10px;
 }
 
- @media screen and (max-width: 420px){
+ @media screen and (max-width: 680px){
     ul.navi{
 
         width:100vw;
-        font-size: 30px;
+        font-size: 15px;
     }
     li.navi{
+        font-size: 20px;
         width:100vw;
         float:none;
         justify-content: center;
@@ -280,11 +296,29 @@ li.navi.left{
         padding:5px;
         text-align: center;
     }
-   
+    .loginmodal{
+        margin-top:0px;
+    }
+    #preOrdersBtn{
+        font-size:20px;
+        margin-top:0px;
+        padding:10px;
+        border-style: none;
+        outline:none;
+        color:#FFFFFF;
+        background-color: #212121;
+    }
+
+    #preOrdersBtn:hover{
+        font-size:20px;
+        font-weight: bold;
+        outline:none;
+    }
+
     #count{
         padding:0px;
         margin-right:10px;
-        font-size:38px;
+        font-size:25px;
         width:10%;
     }
     #Cardrender{

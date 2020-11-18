@@ -176,20 +176,3 @@ function createUser(){
     userbox.appendChild(creationCard)
     document.getElementById("creationBtn").addEventListener("click", createUserObj)
 }
-/* let users =[
-    {
-        username:"Grexes",
-        password:"123"
-    },
-    {
-        username:"Whilma",
-        password:"123"
-    },
-    {
-        username:"Gröna",
-        password:"123"
-    },
-
-]
-
-localStorage.setItem("Userlist", JSON.stringify(users)) */
