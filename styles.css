@@ -142,13 +142,14 @@ li.navi.left{
 
 /** This gives the background and alignment of the cards on main**/
 #cardBackground{
-    width:100vw;
+    width:100%;
     display:flex;
     justify-content: center;
     background:linear-gradient(#FFFFFF,#F5F5F5);
 }
 #Cardrender{
     margin-top:20px;
+    width:100vw;
 }
 
 #cardContainer{
