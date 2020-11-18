@@ -165,6 +165,7 @@ function createUser(){
 
     let creationBtn = document.createElement("button")
     creationBtn.id="creationBtn"
+    creationBtn.classList = "BtnLoginColors"
     creationBtn.innerText ="Create Account"
 
     carddesign.appendChild(creationTitle)
