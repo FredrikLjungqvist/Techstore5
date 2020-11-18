@@ -1,5 +1,6 @@
-document.getElementById("preOrdersBtn").addEventListener("click", getOrders)
+document.getElementById("preOrdersBtn").addEventListener("click", initLoggedIn)
 function initLoggedIn() {
+    document.getElementById("preOrdersBtn").style.display ="block"
    document.getElementById("main").innerHTML=""
    document.getElementById("cart").innerHTML=""
    renderContent()
