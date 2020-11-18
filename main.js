@@ -21,6 +21,7 @@ function addToCart(i) {
 } */
 
 function initSite() {
+    UserCheck()
     loadProducts();
     
     
@@ -152,5 +153,26 @@ function counter() {
    window.onclick = function(event) {
        if (event.target == modalcontainer){
         modalcontainer.style.display = "none"
+       }
+   }
+
+   function showlogin(){
+    document.getElementById("modalbutton").classList.remove("hide")
+    document.getElementById("logoutbtn").classList.add("hide")
+}
+
+function hidelogin(){
+    document.getElementById("modalbutton").classList.add("hide")
+    document.getElementById("logoutbtn").classList.remove("hide")
+}
+function ShowOrders(){
+    document.getElementById("UserPreOrders").classList.remove("hide")
+}
+
+   function UserCheck(){
+       let inloggedUser = localStorage.getItem("loggedInUser")
+       if (inloggedUser){
+        hidelogin()
+        ShowOrders()
        }
    }
