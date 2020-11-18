@@ -12,39 +12,36 @@ function loadProducts() {
     });
 }
 
-
-/* //Knappens EventListner
-addEventListener("click", function() {addToCart(i)}
-//Knappens funktion
-function addToCart(i) {
-    cartList.push(listOfProducts[i])
-} */
-
 function initSite() {
+
+    loadProducts()
+    let main = document.createElement("div")
+    main.id = "main"
+    let Cardrender = document.createElement("div")
+    Cardrender.id = "Cardrender"
+    let cart = document.createElement("div")
+    cart.id = "cart"
+    let loggedIn = document.createElement("div")
+    loggedIn.id = "loggedIn"
+    let userBox = document.createElement("div")
+    userBox.id = "userBox"
+    document.getElementById("appRender").append(main, cart, loggedIn, userBox)
+    main.appendChild(Cardrender)
+
     UserCheck()
-    loadProducts();
+    
     
     
     
     // This would also be a good place to initialize other parts of the UI
+
 }
-
-
-
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
-    // Check your console to see that the products are stored in the listOfProducts varible.
-
     for (let i = 0; i < listOfProducts.length; i++) {
         let product = listOfProducts[i];
         document.getElementById("main").appendChild(createProductCard(i))
     }
-   
-
-
-   
-  
-    
 }
 
 
@@ -119,33 +116,33 @@ function counter() {
     let list = getCartList()
     if (list.length>0) {
         document.getElementById("count").innerHTML = list.length
-    console.log(list.length)
     }
 }
 
-    // Make variable from getCartList() to save new product in. Then save the variable to storage
-    function addToCart(i) {
+// Make variable from getCartList() to save new product in. Then save the variable to storage
+function addToCart(i) {
     let cartToSave = getCartList()
     cartToSave.push(listOfProducts[i])
     localStorage.setItem("cartList", JSON.stringify(cartToSave))
 
     CartCounter()
-   }
-   function CartCounter(){
-       document.getElementById("count").innerHTML = ""
-       let cartCounter = getCartList()
-       cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
-   }
-   CartCounter()
-   
-   let modalcontainer  = document.getElementById("theModal");
+}
+function CartCounter(){
+    document.getElementById("count").innerHTML = ""
+    let cartCounter = getCartList()
+    cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
+}
+CartCounter()
 
-   let modalButton = document.getElementById("modalbutton");
+let modalcontainer  = document.getElementById("theModal");
 
-   let span = document.getElementsByClassName("closemodal")[0];
+let modalButton = document.getElementById("modalbutton");
 
-   modalButton.onclick = function(){
+let span = document.getElementsByClassName("closemodal")[0];
+
+modalButton.onclick = function(){
     modalcontainer.style.display ="block";
+
    }
    span.onclick =function(){
        modalcontainer.style.display = "none"
@@ -176,3 +173,4 @@ function ShowOrders(){
         ShowOrders()
        }
    }
+
