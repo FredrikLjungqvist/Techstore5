@@ -1,31 +1,31 @@
-// JavaScript for cart
-
+//JavaScript for cart
+//Funktioner som körs vid start av sidan
 function initCart() {
-    document.getElementById("main").innerHTML = "";
-    printTitle();
-    initCard();
-    printCart();
-    initCounterButton();
-    totalPrice();
+    document.getElementById("main").innerHTML = ""
+    printTitle()
+    initCard()
+    printCart()
+    initCounterButton()
+    totalPrice()
 }
-
+//Loopa genom varukorgslistan
 function printCart() {
-    let list = getCartList();
+    let list = getCartList()
     for (let i = 0; i < list.length; i++) {
-        let product = list[i];
-        document.getElementById("printCart").appendChild(addInfoCard(i));
+        let product = list[i]
+        document.getElementById("printCart").appendChild(addInfoCard(i))
     }
      
 }
-
+//Hämatar varukorgen från localstorage
 function getCartList() {
-    const cartList = localStorage.getItem("cartList");
+    const cartList = localStorage.getItem("cartList")
     if (cartList) {
-        return  JSON.parse(cartList);
+        return  JSON.parse(cartList)
     }
     return []
 }
-
+//Rendera varukorgskort på sidan
  function addInfoCard(i) {
     
     let container = document.createElement("div")
@@ -40,7 +40,7 @@ function getCartList() {
     let image = document.createElement("img")
     image.classList.add("card-img-top", "img-fluid")
     let imageUrl = list[i].image
-    image.src += ("/assets/" +imageUrl);
+    image.src += ("/assets/" +imageUrl)
     
     let div2 = document.createElement("div")
     div2.classList.add("card-body", "text-align-center")
@@ -62,14 +62,14 @@ function getCartList() {
         removeProduct(i)}
 
    
-    container.appendChild(div);
-    div.append(image, div2);
-    div2.append(title, description, button);
+    container.appendChild(div)
+    div.append(image, div2)
+    div2.append(title, description, button)
 return div
 }
 
 
-
+//Ta bort produkt från varukorg
 function removeProduct(i) {
     let cart = getCartList()
     cart.splice(i,1)
@@ -84,29 +84,25 @@ function removeProduct(i) {
 } 
 
 //Totalpris
- function totalPrice() {
-     
+function totalPrice() {
+    let list = getCartList()
+    let initialValue = 0
+    let sum = list.reduce(function (total, currentItem) {
+        return total + currentItem.price;
+    }, initialValue);
 
-let list = getCartList()
-let initialValue = 0;
-
-let sum = list.reduce(function (total, currentItem) {
-    return total + currentItem.price;
-}, initialValue);
-
-   return sum
- 
+    return sum
 }
 
-
+//Funktion för genomfört köp
 function betalt() {
     alert("Köpet genomfört")
-
     saveOrder()
     localStorage.removeItem("cartList");
     initCart();
     CartCounter();
 }
+//Spara beställning till logged in user
 function saveOrder() {
     let getOrder = getCartList()
     let orderObject = {
@@ -114,12 +110,11 @@ function saveOrder() {
         products: getOrder
     }
     
-    
-
-let loggedInUser = getLoggedInUser()
-loggedInUser.orders.push(orderObject)
-syncUsers(loggedInUser)
+    let loggedInUser = getLoggedInUser()
+    loggedInUser.orders.push(orderObject)
+    syncUsers(loggedInUser)
 }
+//Hämta loggedinusser från localstorage
 function getLoggedInUser() {
     const loggedInUser =  localStorage.getItem("loggedInUser");
     if (loggedInUser) {
@@ -128,6 +123,7 @@ function getLoggedInUser() {
     }
     return []
 }
+//Hämta userlist från local storage
 function getUsers() {
     const users = localStorage.getItem("userList");
     if(users){
@@ -135,7 +131,7 @@ function getUsers() {
         console.log(users)
     }
 }
-
+//Synka loggedinuser och userlist
 function syncUsers(loggedInUser) {
     let userList= getUsers()
     let userIndex = userList.findIndex((user)=>{
@@ -145,13 +141,14 @@ function syncUsers(loggedInUser) {
     localStorage.setItem("userList", JSON.stringify(userList))
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
 }
+//Visa text när varukorgen är tom
 function noItem() {
     let text = document.createElement("h1")
     text.id = "tom"
     text.innerText = "Din kundvagn är tom"
     document.getElementById("cart").appendChild(text)
 }
-
+//Skriva ut rubriken för varukorgen
 function printTitle() {
     let title = document.createElement("h2")
     title.innerText = "Kundvagn"
@@ -160,15 +157,14 @@ function printTitle() {
     document.getElementById("cart").innerText = ""
     document.getElementById("cart").appendChild(title)
 }
-
-   
+//Hämta antal produter som skall skrivas ut i navbar
 function CartCounter(){
     document.getElementById("count").innerHTML = ""
     let cartCounter = getCartList()
     cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
                 
    }
-
+//Containers för att rendera produktkort
 function initCard() {
     let bigCont = document.createElement("div")
     bigCont.classList.add("container", "my-2")
@@ -179,14 +175,13 @@ function initCard() {
 
     document.getElementById("cart").appendChild(bigCont)
     bigCont.appendChild(row)
-
 }
-
+//Rendera ut totalsumma och knapp för köp
 function initCounterButton() {
     let list = getCartList()
     
-    setTextById("price", "")
-    setTextById("buy", "") 
+    /* setTextById("price", "")
+    setTextById("buy", "")  */
     
     let counterDiv = document.createElement("div")
     counterDiv.id = "counterDiv"
@@ -202,8 +197,8 @@ function initCounterButton() {
     buttonDiv.id = "buttonDiv"
     document.getElementById("cart").appendChild(buttonDiv)
     displayBuyButton()
-    
 }
+//Visa inte totalpris när varukorgen är tom
 function counterTotal() {
     let list = getCartList()
     document.getElementById("price").innerText = ""
@@ -211,26 +206,26 @@ function counterTotal() {
         document.getElementById("price").innerText = "Totalt pris: " + totalPrice() + " kr";
         } 
 }
-
+//Visa inte köpknapp när varukorgen är tom
 function displayBuyButton() {
     let list = getCartList()
     document.getElementById("buttonDiv").innerHTML = ""
     if (list.length>0){
-    let button = document.createElement("button")
-       button.innerHTML = "Slutför ditt köp"
-       button.addEventListener("click", betalt)
-       button.id = "buyBtn"
-       button.classList.add("btn", "btn-primary")
-       document.getElementById("buttonDiv").appendChild(button)
+        let button = document.createElement("button")
+        button.innerHTML = "Slutför ditt köp"
+        button.addEventListener("click", betalt)
+        button.id = "buyBtn"
+        button.classList.add("btn", "btn-primary")
+        document.getElementById("buttonDiv").appendChild(button)
     }else{
         noItem()
     }
 }
-
+/* //Test för att sätta text
 function setTextById(htmlId, text) {
     let element = document.getElementById(htmlId)
     if (element) {
         element.innerText=text
     }
-}
+} */
 

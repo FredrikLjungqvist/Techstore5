@@ -1,6 +1,8 @@
 function initLoggedIn() {
    document.getElementById("main").innerHTML=""
    document.getElementById("cart").innerHTML=""
+   renderContent()
+   getOrders()
     /* let log = {
     username: "Fredrik",
     password: "123",
@@ -26,58 +28,54 @@ function getCartList() {
     }
     return []
 }
-function printOrders() {
-    let user = getLoggedInUser()
-    let listCont = document.createElement("div")
-    listCont.innerHTML = user.username 
-    document.getElementById("render").appendChild(listCont)
+function renderContent() {
+    let welcomeMsg = document.createElement("h2")
+    welcomeMsg.innerHTML = "Välkommen " + getLoggedInUser().username
+    welcomeMsg.classList.add("welcomeMsg")
+    let orderText = document.createElement("h4")
+    orderText.innerHTML = "Dina beställningar:"
+    document.getElementById("loggedIn").append(welcomeMsg, orderText)
+    
 }
 
 function getOrders() {
-    let user = getLoggedInUser()
+    let user = getLoggedInUser();
+    
     user.orders.forEach((order) => {
         
         
-        
-        let date = document.createElement("h4")
+        let sum = 0
+        let date = document.createElement("h5")
         date.classList.add("date")
         date.id = "dateId"
-        date.innerHTML = order.date + " Totalpris " + totalPrice()
-        
+        date.innerHTML = order.date 
         document.getElementById("loggedIn").appendChild(date)
         console.log(order.date)
         order.products.forEach((product) => {
             
-            let productName = document.createElement("h3")
+            let productName = document.createElement("p")
             productName.innerHTML =  product.title
             productName.id = "productName"
             document.getElementById("loggedIn").appendChild(productName)
             console.log(productName)
             
+            sum +=product.price
+            
+
+            
 
         })
         
-    
-        
+        let price = document.createElement("p")
+        price.innerHTML = "Totalt pris: " + sum + " kr"
+        price.className = "slutPris"
+        document.getElementById("loggedIn").appendChild(price)
+        console.log(sum)
         
         
         
     })
 }
-function totalPrice() {
-     
-
-    let list = getCartList()
-    let initialValue = 0;
-    
-    let sum = list.reduce(function (total, currentItem) {
-        return total + currentItem.price;
-    }, initialValue);
-    
-       return sum
-     
-    }
-
 
 
 

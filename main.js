@@ -24,6 +24,7 @@ function initSite() {
     loadProducts();
     
     
+    
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -33,30 +34,20 @@ function initSite() {
 function addProductsToWebpage() {
     // Check your console to see that the products are stored in the listOfProducts varible.
 
-
-   /*  function counter(){
-        let cartCounter = localStorage.getItem("cartList")
-        for(let i=0;i < cartCounter.length; i++)
-            if(cartCounter){
-                cartCounter = JSON.parse(cartCounter)
-                console.log(cartCounter.length)
-                let addButton = document.getElementById("addButton");
-                cartCounter = document.getElementById("count").innerHTML = cartCounter.length;
-        }
-        else{
-            cartCounter = []
-        }
-    } */
-
-getProducts()
-   function getProducts() {
-       for (let i = 0; i < listOfProducts.length; i++) {
-           let product = listOfProducts[i];
-           document.getElementById("main").appendChild(createProductCard(i))
-       }
-
+    for (let i = 0; i < listOfProducts.length; i++) {
+        let product = listOfProducts[i];
+        document.getElementById("main").appendChild(createProductCard(i))
     }
-   function createProductCard(i) {
+   
+
+
+   
+  
+    
+}
+
+
+function createProductCard(i) {
 
     CartCounter()
         let Cardrender = document.getElementById("Cardrender")
@@ -163,9 +154,3 @@ function counter() {
         modalcontainer.style.display = "none"
        }
    }
-    // Add your code here, remember to brake your code in to smaller function blocks
-    // to reduce complexity and increase readability. Each function should have
-    // an explainetory comment like the one for this function, see row 22.
-    
-    // TODO: Remove the console.log and these comments when you've read them.
-}
