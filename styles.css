@@ -239,6 +239,30 @@ li.navi.left{
 .hide{
     display:none;
 }
+/*Create User ID:s and Classes*/
+
+#creationCard{
+    margin-top:180px;
+    padding:10px;
+    display:flex;
+    justify-content: center;
+}
+
+#carddesign{
+    display: flex;
+    flex-direction: column;
+}
+#creationTitle{
+    margin-bottom:10px;
+}
+#passwordInput{
+    margin:0px;
+    margin-bottom: 10px;
+}
+#nameInput{
+    margin:0px;
+    margin-bottom: 10px;
+}
 
  @media screen and (max-width: 420px){
     ul.navi{
