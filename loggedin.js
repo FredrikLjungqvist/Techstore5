@@ -1,13 +1,15 @@
 document.getElementById("preOrdersBtn").addEventListener("click", initLoggedIn)
 function initLoggedIn() {
-    document.getElementById("preOrdersBtn").style.display ="block"
+    ShowOrders()
    document.getElementById("main").innerHTML=""
    document.getElementById("cart").innerHTML=""
    document.getElementById("loggedIn").innerHTML = ""
    renderContent()
    getOrders()
 }
-
+function ShowOrders(){
+    document.getElementById("UserPreOrders").classList.remove("hide")
+}
 
 function getLoggedInUser() {
     const loggedInUser =  localStorage.getItem("loggedInUser");
