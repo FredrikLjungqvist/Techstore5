@@ -35,6 +35,7 @@ function fetchUser(){
 function closeModal(){
     let modalcontainer  = document.getElementById("theModal");
     modalcontainer.style.display = "none"
+    
 }
 
 
@@ -51,7 +52,7 @@ function loginUser(){
         if (Username == userlist.username && Password == userlist.password){
             closeModal()
             hidelogin()
-            initLoggedIn()
+            
             foundUser = userlist
             
         }else{
@@ -63,6 +64,7 @@ function loginUser(){
         hidelogin()
         document.getElementById("userInput").value =""
         document.getElementById("passInput").value =""
+        initLoggedIn()
 
     }
 
@@ -73,6 +75,7 @@ function loginUser(){
 function logoutUser(){
     localStorage.removeItem("loggedInUser")
     showlogin()
+    window.location="index.html"
 }
 
 function showlogin(){
