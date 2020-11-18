@@ -69,6 +69,18 @@ input{
     margin:5px;
 }
 
+.BtnLoginColors{
+    padding:7px;
+    color:#FFFFFF;
+    background-color:#5596F5;
+    border-style:none;
+    outline: none;
+}
+.BtnLoginColors:hover{
+    color:#FFFFFF;
+    background-color:#5596F580;
+}
+
 #count{
     padding:5px;
     margin:0px;
