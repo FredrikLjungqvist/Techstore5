@@ -3,6 +3,7 @@ function initLoggedIn() {
     document.getElementById("preOrdersBtn").style.display ="block"
    document.getElementById("main").innerHTML=""
    document.getElementById("cart").innerHTML=""
+   document.getElementById("loggedIn").innerHTML = ""
    renderContent()
    getOrders()
 }
