@@ -127,7 +127,7 @@ function pushUser(){
         let newUserInfo = {
             username:UserName,
             password:PassWord,
-            order: []
+            orders: []
          }
     console.log(newUserInfo)
     console.log(userList)
