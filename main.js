@@ -13,6 +13,7 @@ function loadProducts() {
 }
 
 function initSite() {
+
     loadProducts()
     let main = document.createElement("div")
     main.id = "main"
@@ -26,6 +27,14 @@ function initSite() {
     userBox.id = "userBox"
     document.getElementById("appRender").append(main, cart, loggedIn, userBox)
     main.appendChild(Cardrender)
+
+    UserCheck()
+    
+    
+    
+    
+    // This would also be a good place to initialize other parts of the UI
+
 }
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
@@ -133,12 +142,35 @@ let span = document.getElementsByClassName("closemodal")[0];
 
 modalButton.onclick = function(){
     modalcontainer.style.display ="block";
+
+   }
+   span.onclick =function(){
+       modalcontainer.style.display = "none"
+   }
+   window.onclick = function(event) {
+       if (event.target == modalcontainer){
+        modalcontainer.style.display = "none"
+       }
+   }
+
+   function showlogin(){
+    document.getElementById("modalbutton").classList.remove("hide")
+    document.getElementById("logoutbtn").classList.add("hide")
 }
-span.onclick =function(){
-    modalcontainer.style.display = "none"
+
+function hidelogin(){
+    document.getElementById("modalbutton").classList.add("hide")
+    document.getElementById("logoutbtn").classList.remove("hide")
 }
-window.onclick = function(event) {
-    if (event.target == modalcontainer){
-    modalcontainer.style.display = "none"
-    }
+function ShowOrders(){
+    document.getElementById("UserPreOrders").classList.remove("hide")
 }
+
+   function UserCheck(){
+       let inloggedUser = localStorage.getItem("loggedInUser")
+       if (inloggedUser){
+        hidelogin()
+        ShowOrders()
+       }
+   }
+
