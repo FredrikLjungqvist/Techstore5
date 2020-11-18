@@ -19,5 +19,36 @@
         "description": "Super nice and beautiful smartphone from LG.",
         "image": "LGV30.png",
         "price": 7495
+    },{
+        "title": "iPhone 12",
+        "description": "Ett sjumilasprång för iPhone.",
+        "image": "iphone12.png",
+        "price": 12495
+    },{
+        "title": "Galaxy S20",
+        "description": "Ett nytt sätt att se på världen.",
+        "image": "galaxys20.png",
+        "price": 10995
+    },{
+        "title": "Note 20",
+        "description": "Kraftfull för dig som är lika effektiv som kreativ.",
+        "image": "note20.png",
+        "price": 14595
+    },{
+        "title": "iPhone XR",
+        "description": "En heltäckande upplevelse.",
+        "image": "iphonexr.png",
+        "price": 9495
+    },{
+        "title": "P40 PRO",
+        "description": "Revolutionera din upplevelse av hastighet och kraft.",
+        "image": "huaweip40.png",
+        "price": 10995
+    },{
+        "title": "Galaxy Z",
+        "description": "För dig som vill ha ut mer av livet och maximera varje ögonblick",
+        "image": "galaxyz.png",
+        "price": 22695
     }
+
 ]
