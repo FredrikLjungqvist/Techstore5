@@ -68,9 +68,13 @@ input{
     padding:5px;
     margin:5px;
 }
-
+.btncolorchange{
+    color:#FFFFFF;
+}
+.btncolorchange:hover{
+    color:#5596F5;
+}
 .BtnLoginColors{
-    padding:7px;
     color:#FFFFFF;
     background-color:#5596F5;
     border-style:none;
