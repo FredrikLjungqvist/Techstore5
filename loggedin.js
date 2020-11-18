@@ -3,13 +3,6 @@ function initLoggedIn() {
    document.getElementById("cart").innerHTML=""
    renderContent()
    getOrders()
-    /* let log = {
-    username: "Fredrik",
-    password: "123",
-    orders: []
-}
-localStorage.setItem("loggedInUser", JSON.stringify(log)) */  
- 
 }
 
 
@@ -17,7 +10,7 @@ function getLoggedInUser() {
     const loggedInUser =  localStorage.getItem("loggedInUser");
     if (loggedInUser) {
         
-        return  JSON.parse(loggedInUser);
+        return  JSON.parse(loggedInUser)
     }
     return []
 }
@@ -34,7 +27,12 @@ function renderContent() {
     welcomeMsg.classList.add("welcomeMsg")
     let orderText = document.createElement("h4")
     orderText.innerHTML = "Dina beställningar:"
+    let user= getLoggedInUser()
+    if (user.order<1) {
+        orderText.innerHTML = "Du har inga beställningar."
+    }
     document.getElementById("loggedIn").append(welcomeMsg, orderText)
+    
     
 }
 
@@ -57,20 +55,14 @@ function getOrders() {
             productName.innerHTML =  product.title
             productName.id = "productName"
             document.getElementById("loggedIn").appendChild(productName)
-            console.log(productName)
-            
             sum +=product.price
-            
-
-            
-
         })
         
         let price = document.createElement("p")
         price.innerHTML = "Totalt pris: " + sum + " kr"
         price.className = "slutPris"
         document.getElementById("loggedIn").appendChild(price)
-        console.log(sum)
+        
         
         
         
@@ -110,16 +102,3 @@ function syncUsers(loggedInUser) {
     localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
 }
 
-/* let userList = [
-    {
-        username: "Fredrik",
-        passowrd: "123",
-        orders: []
-    },
-    {
-        username: "Niklas",
-        password: "123",
-        orders: []
-    }
-]
-localStorage.setItem("userList", JSON.stringify(userList)) */

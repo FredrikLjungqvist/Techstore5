@@ -2,6 +2,7 @@
 //Funktioner som körs vid start av sidan
 function initCart() {
     document.getElementById("main").innerHTML = ""
+    document.getElementById("loggedIn").innerHTML = ""
     printTitle()
     initCard()
     printCart()
