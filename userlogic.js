@@ -53,7 +53,7 @@ function loginUser(){
         if (Username == userlist.username && Password == userlist.password){
             closeModal()
             hidelogin()
-            
+            document.getElementById("UserPreOrders").style.display ="block"
             foundUser = userlist
             
         }else{
