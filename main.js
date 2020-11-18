@@ -83,7 +83,7 @@ function createProductCard(i) {
 
        let price = document.createElement("p");
        price.id="pricetag"
-       price.innerHTML += listOfProducts[i].price
+       price.innerHTML += listOfProducts[i].price + " kr"
 
        let button = document.createElement("button");
        button.id="addButton"
