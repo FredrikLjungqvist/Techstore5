@@ -2,6 +2,7 @@ document.getElementById("preOrdersBtn").addEventListener("click", getOrders)
 function initLoggedIn() {
    document.getElementById("main").innerHTML=""
    document.getElementById("cart").innerHTML=""
+   document.getElementById("loggedIn").innerHTML = ""
    renderContent()
    getOrders()
 }
