@@ -1,4 +1,5 @@
 document.getElementById("preOrdersBtn").addEventListener("click", initLoggedIn)
+//Funtioner som körs när sidan laddas
 function initLoggedIn() {
 
     ShowOrders()
@@ -9,10 +10,11 @@ function initLoggedIn() {
     getOrders()
 
 }
+//Funtion för att visa Orders i navbar
 function ShowOrders(){
     document.getElementById("UserPreOrders").classList.remove("hide")
 }
-
+//Hämt inloggad användare från local storage
 function getLoggedInUser() {
     const loggedInUser =  localStorage.getItem("loggedInUser");
     if (loggedInUser) {
@@ -21,6 +23,7 @@ function getLoggedInUser() {
     }
     return []
 }
+//Hämta varukorgen från local storage
 function getCartList() {
     const cartList = localStorage.getItem("cartList");
     if (cartList) {
@@ -28,6 +31,7 @@ function getCartList() {
     }
     return []
 }
+//Visa rubriker på order sida
 function renderContent() {
     let welcomeMsg = document.createElement("h2")
     welcomeMsg.innerHTML = "Välkommen " + getLoggedInUser().username
@@ -42,6 +46,7 @@ function renderContent() {
     }
     document.getElementById("loggedIn").append(welcomeMsg, orderText)
 }
+//Hämta och skriva ut ordrar
 function getOrders() {
     let user = getLoggedInUser();
     user.orders.forEach((order) => {
@@ -66,7 +71,7 @@ function getOrders() {
         document.getElementById("loggedIn").appendChild(price)    
         })
 }
-
+//Spara ordrar till inloggad användare i variabel
 function saveOrder() {
     let getOrder = getCartList()
     let orderObject = {
@@ -77,17 +82,18 @@ let loggedInUser = getLoggedInUser()
 loggedInUser.orders.push(orderObject)
 syncUsers(loggedInUser)
 }
+//Hämta userlist från local storage
 function getUsers() {
     const users = localStorage.getItem("userList");
     if(users){
         return JSON.parse(users)
     }
 }
-
+//Synka och spara inloggad användare samt userlist i local storage
 function syncUsers(loggedInUser) {
     let userList= getUsers()
     let userIndex = userList.findIndex((user)=>{
-        return loggedInUser.username == user.username 
+        return loggedInUser.username == user.username && loggedInUser.password == user.password
     })
     userList[userIndex] = loggedInUser
     localStorage.setItem("userList", JSON.stringify(userList))
