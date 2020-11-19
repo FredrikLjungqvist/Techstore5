@@ -30,13 +30,8 @@ function initSite() {
 
     UserCheck()
     
-    
-    
-    
-    // This would also be a good place to initialize other parts of the UI
-
 }
-/** Uses the loaded products data to create a visible product list on the website */
+
 function addProductsToWebpage() {
     for (let i = 0; i < listOfProducts.length; i++) {
         let product = listOfProducts[i];

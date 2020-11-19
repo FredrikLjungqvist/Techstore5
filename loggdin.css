@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-#loggedIn{
+/* #loggedIn{
     display: flex;
     flex-direction: column;
     margin-top: 150px;
@@ -16,4 +16,4 @@ margin-bottom: 30px;
 }
 .slutPris{
     font-weight: bold;
-}
+} */
