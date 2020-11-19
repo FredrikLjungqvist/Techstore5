@@ -181,9 +181,6 @@ function initCard() {
 function initCounterButton() {
     let list = getCartList()
     
-    /* setTextById("price", "")
-    setTextById("buy", "")  */
-    
     let counterDiv = document.createElement("div")
     counterDiv.id = "counterDiv"
     let price = document.createElement("p")
@@ -222,11 +219,5 @@ function displayBuyButton() {
         noItem()
     }
 }
-/* //Test för att sätta text
-function setTextById(htmlId, text) {
-    let element = document.getElementById(htmlId)
-    if (element) {
-        element.innerText=text
-    }
-} */
+
 
