@@ -248,7 +248,7 @@ li.navi.left{
     text-align:center;
     color:white;
     background-color:red;
-}/*test om det fngerar med en login knapp*/
+}
 
 #preOrdersBtn{
     justify-content: center;
@@ -297,7 +297,7 @@ li.navi.left{
 #loggedIn{
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 120px;
     padding-left: 20px;
 }
 .welcomeMsg{
@@ -309,6 +309,11 @@ margin-bottom: 30px;
 }
 .slutPris{
     font-weight: bold;
+}
+@media screen and (max-width: 680px){
+    #loggedIn{
+        margin-top: 200px;
+    }
 }
 
  @media screen and (max-width: 680px){
