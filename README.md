@@ -12,6 +12,7 @@ Graphic:
 *Made the product cards in cart have a static width and height - To give more symmetrical satisfaction and more in line with current market standards.  
 *Added additional view the see previous orders - No real focus was given to the design except for readability of previous orders.
 *Added modal popup when login button is pressed. The main area of the page is faded to grey to enhance the sense of the popup is Infront of everything else - The popup is kept in the same style as the rest of the page. 
+*Made the cart in the navbar not fully float to the right edge of page - This was because our choice of design of the navbar did not fully support what the client asked for.
 Logic/HTML CSS
 *Added modal popup login form from HTML - This was to keep the project cleaner and keeping the lines code and the amount of files lower. This was also made to prevent the navbar from being cluttered. 
 *Made all product cards render from JavaScript in the same HTML document. - This was made by having one DIV in the HTML and append everything to it. The reason for this design is that it's more up to par with industry standards on how web pages are made. This also makes it easier to add more functionality without getting additional HTML documents. 
