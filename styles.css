@@ -16,7 +16,7 @@ h3{
 
 .loginmodal{
     width:100%;
-    margin-top: 10px;
+    margin-top:15px;
     display:block;
     color:#FFFFFF;
     background-color: #212121;
@@ -88,6 +88,9 @@ input{
 #count{
     padding:5px;
     margin:0px;
+    /* display: flex;
+    justify-items: center;
+    justify-content: center; */
     font-size:50px;
     width:22%;
 }
@@ -161,16 +164,14 @@ li.navi.left{
     background:linear-gradient(#FFFFFF,#F5F5F5);
 }
 #Cardrender{
-    margin-top:20px;
+    margin-top:100px;
     width:100vw;
 }
 
 #cardContainer{
-    /* min-width:150px;
-    max-width:300px; */
     width:280px;
-    margin-top:85px;
-    margin-bottom: 80px;
+    margin-top:30px;
+    margin-bottom:30px;
     display:flex;
     justify-content: center;
     flex-direction: column;
@@ -293,6 +294,7 @@ li.navi.left{
     margin:0px;
     margin-bottom: 10px;
 }
+
 /*style for loggedIn */
 #loggedIn{
     display: flex;
@@ -315,7 +317,6 @@ margin-bottom: 30px;
         margin-top: 200px;
     }
 }
-
  @media screen and (max-width: 680px){
     ul.navi{
 
@@ -344,7 +345,6 @@ margin-bottom: 30px;
         color:#FFFFFF;
         background-color: #212121;
     }
-
     #preOrdersBtn:hover{
         font-size:20px;
         font-weight: bold;
@@ -358,10 +358,10 @@ margin-bottom: 30px;
         width:10%;
     }
     #Cardrender{
-        margin-top:60px;
+        margin-top:160px;
     }
     #cardContainer{
-        margin-top:130px;
+        margin-top:30px;
         margin-bottom:30px;
     }
     .modalcontainer{
